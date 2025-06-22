@@ -113,6 +113,8 @@ import org.apache.calcite.sql.SqlIdentifier;
 import org.apache.calcite.sql.SqlOperator;
 import org.apache.calcite.sql.SqlSyntax;
 import org.apache.calcite.sql.util.ListSqlOperatorTable;
+ // change here
+import com.antgroup.geaflow.dsl.udf.graph.CycleDetectionAlgorithm;
 
 /**
  * SQL build-in {@link SqlFunction}s.
@@ -213,6 +215,9 @@ public class BuildInSqlFunctionTable extends ListSqlOperatorTable {
             .add(GeaFlowFunction.of(IncWeakConnectedComponents.class))
             .add(GeaFlowFunction.of(CommonNeighbors.class))
             .add(GeaFlowFunction.of(IncKHopAlgorithm.class))
+            // change here
+            .add(GeaFlowFunction.of(CycleDetectionAlgorithm.class))
+    
             .build();
 
     public BuildInSqlFunctionTable(GQLJavaTypeFactory typeFactory) {
