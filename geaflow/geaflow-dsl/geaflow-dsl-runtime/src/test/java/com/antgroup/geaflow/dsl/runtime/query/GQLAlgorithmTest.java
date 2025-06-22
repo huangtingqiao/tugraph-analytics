@@ -272,5 +272,16 @@ public class GQLAlgorithmTest {
         if (file.exists()) {
             FileUtils.deleteDirectory(file);
         }
+        
+    }
+    @Test
+    public void testCirclesDetection() throws Exception {
+        // 执行测试
+        QueryTester
+            .build()
+            .withGraphDefine("/query/human_graph.sql")
+            .withQueryPath("/query/gql_algorithm_cd.sql")
+            .execute()
+            .checkSinkResult();
     }
 }
